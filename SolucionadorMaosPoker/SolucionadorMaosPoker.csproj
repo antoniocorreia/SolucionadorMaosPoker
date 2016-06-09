@@ -46,9 +46,18 @@
     <Compile Include="Carta.cs" />
     <Compile Include="Enum\EnumJogos.cs" />
     <Compile Include="Jogos\CartaAlta.cs" />
+    <Compile Include="Jogos\DoisPares.cs" />
+    <Compile Include="Jogos\Flush.cs" />
+    <Compile Include="Jogos\FullHouse.cs" />
+    <Compile Include="Jogos\Quadra.cs" />
     <Compile Include="Jogos\RoyalFlash.cs" />
+    <Compile Include="Jogos\Sequencia.cs" />
+    <Compile Include="Jogos\StraightFlush.cs" />
+    <Compile Include="Jogos\Trinca.cs" />
+    <Compile Include="Jogos\UmPar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
