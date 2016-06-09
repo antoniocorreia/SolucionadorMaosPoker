@@ -13,21 +13,8 @@ namespace SolucionadorMaosPoker.Jogos
 
         public bool ExisteNaMao(List<Carta> mao)
         {
-            char naipeAnterior = ' ';
-            foreach (var carta in mao)
-            {
-                if(naipeAnterior == ' ')
-                {
-                    naipeAnterior = carta.Naipe;
-                }
-                else
-                {
-                    if(naipeAnterior != carta.Naipe)
-                    {
-                        return false;
-                    }
-                }
-            }
+            if (!util.CartasDoMesmoNaipe(mao))
+                return false;
 
             int[] numerosCartas = new int[5];
             for (int i = 0; i < mao.Count(); i++)

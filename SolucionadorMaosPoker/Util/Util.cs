@@ -32,5 +32,37 @@ namespace SolucionadorMaosPoker.Util
             }
             return int.Parse(numero.ToString());
         }
+
+        public bool CartasDoMesmoNaipe(List<Carta> mao)
+        {
+            //Checa se cartas são do mesmo naipe
+            char naipeAnterior = ' ';
+            foreach (var carta in mao)
+            {
+                if (naipeAnterior == ' ')
+                {
+                    naipeAnterior = carta.Naipe;
+                }
+                else
+                {
+                    if (naipeAnterior != carta.Naipe)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        public int[] RetornaNumerosCartas(List<Carta> mao)
+        {
+            int[] numerosCartas = new int[5];
+            for (int i = 0; i < mao.Count(); i++)
+            {
+                numerosCartas[i] = ConverteNumeroCarta(mao[i].Numero);
+            }
+            return numerosCartas;
+        }
     }
 }
