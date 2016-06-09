@@ -64,5 +64,6 @@ namespace SolucionadorMaosPoker.Util
             }
             return numerosCartas;
         }
+        
     }
 }

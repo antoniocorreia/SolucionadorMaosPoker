@@ -15,9 +15,9 @@ namespace SolucionadorMaosPoker.Jogos
         {
             if (!util.CartasDoMesmoNaipe(mao))
                 return false;
-            
+
             int[] numerosCartas = util.RetornaNumerosCartas(mao);
-            
+
             Array.Sort(numerosCartas);
 
 
@@ -27,7 +27,7 @@ namespace SolucionadorMaosPoker.Jogos
                 int[] cartasAsComoUm = numerosCartas;
                 cartasAsComoUm[4] = 1;
                 Array.Sort(cartasAsComoUm);
-                for (int j = 0; j < cartasAsComoUm.Length - 1; j += 1)
+                for (int j = 0; j < cartasAsComoUm.Length - 1; j++)
                 {
                     if (cartasAsComoUm[j + 1] - cartasAsComoUm[j] != 1)
                     {
@@ -37,7 +37,7 @@ namespace SolucionadorMaosPoker.Jogos
                 return true;
             }
 
-            for (int j = 0; j < numerosCartas.Length - 1; j += 1)
+            for (int j = 0; j < numerosCartas.Length - 1; j++)
             {
                 if (numerosCartas[j + 1] - numerosCartas[j] != 1)
                 {
@@ -56,21 +56,12 @@ namespace SolucionadorMaosPoker.Jogos
 
             int[] numerosCartasJogador2 = util.RetornaNumerosCartas(maoJogador2);
             Array.Sort(numerosCartasJogador2);
-
-            int i = 4;
-            while(i >= 0){
-                if(numerosCartasJogador1[i] > numerosCartasJogador2[i])
-                {
-                    return true;
-                }
-
-                if(numerosCartasJogador2[i] > numerosCartasJogador1[i])
-                {
-                    return false;
-                }
-
-                i--;
+            
+            if (numerosCartasJogador1[4] > numerosCartasJogador2[4])
+            {
+                return true;
             }
+
             return false;
         }
     }

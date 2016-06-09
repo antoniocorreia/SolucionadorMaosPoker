@@ -48,7 +48,7 @@ namespace SolucionadorMaosPoker
             //{
             stopwatch.Reset();
             stopwatch.Start();
-
+            
             try
             {
                 qtdVitoriasJogador1 = SolucionadorMaosPoker();
@@ -61,7 +61,7 @@ namespace SolucionadorMaosPoker
             }
 
             stopwatch.Stop();
-            Console.WriteLine("Tempo gasto para execução em segundos: " + stopwatch.ElapsedMilliseconds * 0.001);
+            Console.WriteLine("Tempo gasto para execucao em segundos: " + stopwatch.ElapsedMilliseconds * 0.001);
             
             //}
 
@@ -76,7 +76,7 @@ namespace SolucionadorMaosPoker
             int qtdLinhas = 0;
             string linha;
 
-            System.IO.StreamReader arquivo = new System.IO.StreamReader("c:/users/antonio/documents/visual studio 2015/Projects/SolucionadorMaosPoker/SolucionadorMaosPoker/Teste.txt");
+            System.IO.StreamReader arquivo = new System.IO.StreamReader("c:/users/antonio/documents/visual studio 2015/Projects/SolucionadorMaosPoker/SolucionadorMaosPoker/pokerm.txt");
             while ((linha = arquivo.ReadLine()) != null)
             {
                 List<Carta> cartas = linha.Split(' ').ToList().Select(x=> new Carta { Numero = x[0], Naipe = x[1]}).ToList();
@@ -97,7 +97,7 @@ namespace SolucionadorMaosPoker
                     }       
                 }
 
-                Console.WriteLine(linha);
+                //Console.WriteLine(linha);
                 qtdLinhas++;
             }
 
