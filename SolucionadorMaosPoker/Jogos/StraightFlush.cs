@@ -50,7 +50,28 @@ namespace SolucionadorMaosPoker.Jogos
         }
         public bool Jogador1Vence(List<Carta> maoJogador1, List<Carta> maoJogador2)
         {
-            throw new NotImplementedException();
+            //Aqui já sabe-se que os jogos são straight então só compara a maior carta de cada um
+            int[] numerosCartasJogador1 = util.RetornaNumerosCartas(maoJogador1);
+            Array.Sort(numerosCartasJogador1);
+
+            int[] numerosCartasJogador2 = util.RetornaNumerosCartas(maoJogador2);
+            Array.Sort(numerosCartasJogador2);
+
+            int i = 4;
+            while(i >= 0){
+                if(numerosCartasJogador1[i] > numerosCartasJogador2[i])
+                {
+                    return true;
+                }
+
+                if(numerosCartasJogador2[i] > numerosCartasJogador1[i])
+                {
+                    return false;
+                }
+
+                i--;
+            }
+            return false;
         }
     }
 }
